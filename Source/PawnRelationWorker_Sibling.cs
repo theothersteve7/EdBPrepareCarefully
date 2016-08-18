@@ -45,7 +45,7 @@ namespace EdB.PrepareCarefully
 			float? fixedChronologicalAge = new float?(value2);
 			Gender? fixedGender = new Gender?(genderToGenerate);
 			float? fixedSkinWhiteness = new float?(value3);
-			PawnGenerationRequest request = new PawnGenerationRequest(existingChild.kindDef, faction, PawnGenerationContext.NonPlayer, true, false, true, true, false, false, 1, false, allowGay, null, new float?(value), fixedChronologicalAge, fixedGender, fixedSkinWhiteness, last);
+			PawnGenerationRequest request = new PawnGenerationRequest(existingChild.kindDef, faction, PawnGenerationContext.NonPlayer, true, false, true, true, false, false, 1, false, allowGay, true, null, new float?(value), fixedChronologicalAge, fixedGender, fixedSkinWhiteness, last);
 			Pawn pawn = PawnGenerator.GeneratePawn(request);
 			if (!Find.WorldPawns.Contains(pawn)) {
 				Find.WorldPawns.PassToWorld(pawn, PawnDiscardDecideMode.Keep);

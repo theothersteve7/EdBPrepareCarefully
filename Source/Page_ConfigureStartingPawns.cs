@@ -98,7 +98,7 @@ namespace EdB.PrepareCarefully
 			do {
 				this.curPawn = StartingPawnUtility.RandomizeInPlace(this.curPawn);
 			}
-			while (!StartingPawnUtility.AnyoneCanDoRequiredWorkTypes());
+			while (!StartingPawnUtility.WorkTypeRequirementsSatisfied());
 		}
 
 		// EdB: Copy of the RimWorld.Page_ConfigureStartingPawns.SelectPawn()
@@ -110,9 +110,9 @@ namespace EdB.PrepareCarefully
 			}
 		}
 
-		// EdB: Copy of the RimWorld.Page_ConfigureStartingPawns.TryNext()
-		// Updated for Alpha 14.
-		protected override bool TryNext()
+        // EdB: Copy of the RimWorld.Page_ConfigureStartingPawns.TryNext()
+        // Updated for Alpha 14.
+        protected override bool CanDoNext()
 		{
 			foreach (Pawn current in Find.GameInitData.startingPawns) {
 				if (!current.Name.IsValid) {

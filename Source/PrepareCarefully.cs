@@ -470,10 +470,12 @@ namespace EdB.PrepareCarefully
 
 		public bool FindScenPart()
 		{
+            //TODO fix this check
+            /*
 			if (DefDatabase<MapGeneratorDef>.AllDefs.Count() == 1) {
 				MapGeneratorDef def = DefDatabase<MapGeneratorDef>.AllDefs.First();
 				if (def != null) {
-					foreach (var g in def.genSteps) {
+					foreach (var g in def.GenStepsInOrder) {
 						if (g.GetType().FullName.Equals("EdB.PrepareCarefully.Genstep_ScenParts")) {
 							return true;
 						}
@@ -481,6 +483,7 @@ namespace EdB.PrepareCarefully
 					return false;
 				}
 			}
+            */
 			// TODO: We can't figure this out in every situation.  If there's more than one
 			// map generator, the game is going to pick one at random, and we can't know at this
 			// point which one it's going to pick.  In that case, we'll assume that everything is
